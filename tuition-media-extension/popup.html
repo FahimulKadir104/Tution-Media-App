@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuition Media</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Login Container -->
+  <div id="loginContainer">
+    <div class="login-header">
+      <h2>🎓 Tuition Media</h2>
+      <p>Sign in to continue</p>
+    </div>
+    <div class="login-form">
+      <input type="email" id="loginEmail" placeholder="Email" />
+      <input type="password" id="loginPassword" placeholder="Password" />
+      <div id="loginError" class="error-message"></div>
+      <button id="loginBtn" class="primary-btn">Login</button>
+    </div>
+  </div>
+
+  <!-- Student View -->
+  <div id="studentContainer" style="display: none;">
+    <div class="header">
+      <h3>Create Tuition Post</h3>
+      <button id="logoutBtnStudent" class="logout-btn">Logout</button>
+    </div>
+    
+    <div class="form-container">
+      <input type="text" id="postTitle" placeholder="Subject (e.g., Math, Physics)" maxlength="100" />
+      <textarea id="postDescription" placeholder="Description" rows="4"></textarea>
+      
+      <select id="postClassLevel">
+        <option value="">Select Class Level</option>
+        <option value="Class 1-5">Class 1-5</option>
+        <option value="Class 6-8">Class 6-8</option>
+        <option value="Class 9-10">Class 9-10</option>
+        <option value="Class 11-12">Class 11-12</option>
+        <option value="Undergraduate">Undergraduate</option>
+        <option value="Postgraduate">Postgraduate</option>
+      </select>
+      
+      <input type="number" id="postDaysPerWeek" placeholder="Days per Week" min="1" max="7" />
+      <input type="number" id="postSalary" placeholder="Salary (BDT)" min="0" />
+      <input type="text" id="postLocation" placeholder="Location" />
+      
+      <div id="studentError" class="error-message"></div>
+      <div id="studentSuccess" class="success-message"></div>
+      
+      <button id="createPostBtn" class="primary-btn">Create Post</button>
+    </div>
+  </div>
+
+  <!-- Teacher View -->
+  <div id="teacherContainer" style="display: none;">
+    <div class="header">
+      <h3>Available Posts</h3>
+      <button id="logoutBtnTeacher" class="logout-btn">Logout</button>
+    </div>
+    
+    <div id="postsList" class="posts-container"></div>
+    
+    <!-- Response Modal -->
+    <div id="responseModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Respond to Post</h4>
+        <input type="number" id="proposedSalary" placeholder="Your Proposed Salary (BDT)" min="0" />
+        <textarea id="responseMessage" placeholder="Your response message..." rows="4"></textarea>
+        <div id="teacherError" class="error-message"></div>
+        <button id="submitResponseBtn" class="primary-btn">Send Response</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
